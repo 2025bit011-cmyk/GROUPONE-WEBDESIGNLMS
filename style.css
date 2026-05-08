@@ -1,0 +1,86 @@
+:root {
+    --must-navy: #333399;
+    --must-gold: #FCB900;
+    --bg-light: #f1f5f9;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --success: #22c55e;
+    --danger: #ef4444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
+
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+/* Navigation */
+header {
+    background: var(--must-navy);
+    color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.4rem; font-weight: 800; color: var(--must-gold); letter-spacing: 1px; }
+
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav a { color: var(--white); text-decoration: none; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: var(--must-gold); }
+
+/* Containers */
+.container { padding: 40px 5%; max-width: 1200px; margin: auto; }
+
+/* Cards & Tables */
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td { padding: 16px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+th { background: #f8fafc; color: var(--must-navy); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; }
+
+/* Buttons */
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.btn-navy { background: var(--must-navy); color: white; }
+.btn-navy:hover { opacity: 0.9; }
+
+.btn-gold { background: var(--must-gold); color: var(--must-navy); }
+
+/* Status Badges */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.available { background: #dcfce7; color: #166534; }
+.borrowed { background: #fee2e2; color: #991b1b; }
+
+footer { background: #1e293b; color: white; text-align: center; padding: 30px; margin-top: 50px; }

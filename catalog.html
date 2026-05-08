@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MUST Library | Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">GROUP ONE MUST ONLINE LIBRARY</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html" style="color: var(--must-gold);">View Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Library Catalog</h2>
+        <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search for book titles..." style="width:100%; padding: 12px; margin: 20px 0; border: 1px solid #ccc; border-radius: 5px;">
+
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BIT-001</td>
+                    <td>Java Programming</td>
+                    <td>Y. Daniel Liang</td>
+                    <td style="color: green;">Available</td>
+                    <td><button class="btn btn-primary" onclick="alert('Reserved!')">Reserve</button></td>
+                </tr>
+                <tr>
+                    <td>BIT-002</td>
+                    <td>Database Systems</td>
+                    <td>Ramez Elmasri</td>
+                    <td style="color: red;">Borrowed</td>
+                    <td><button class="btn" disabled>Waitlist</button></td>
+                </tr>
+                <tr>
+                    <td>BIT-003</td>
+                    <td>Software Engineering</td>
+                    <td>Ian Sommerville</td>
+                    <td style="color: green;">Available</td>
+                    <td><button class="btn btn-primary" onclick="alert('Reserved!')">Reserve</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("bookTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Search by Title column
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group One | Book Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">GROUP ONE | MUST LMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="dashboard.html">My Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Complete Book Repository</h2>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <input type="text" id="searchBar" onkeyup="filterBooks()" placeholder="Search by Title, Author or ISBN..." style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                <select id="catFilter" style="padding: 10px; border-radius: 6px; border: 1px solid #ddd;">
+                    <option value="">All Categories</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="IT">Information Tech</option>
+                    <option value="ENG">Engineering</option>
+                </select>
+            </div>
+
+            <table id="catalogTable">
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>978-01346</td>
+                        <td><strong>Java: How to Program</strong></td>
+                        <td>Paul Deitel</td>
+                        <td>CS</td>
+                        <td><span class="badge available">Available</span></td>
+                        <td><button class="btn btn-navy" style="padding: 5px 12px; font-size: 0.8rem;" onclick="alert('Requested!')">Borrow</button></td>
+                    </tr>
+                    <tr>
+                        <td>978-03211</td>
+                        <td><strong>Database System Concepts</strong></td>
+                        <td>Silberschatz</td>
+                        <td>IT</td>
+                        <td><span class="badge borrowed">Borrowed</span></td>
+                        <td><button class="btn" style="padding: 5px 12px; font-size: 0.8rem; background: #cbd5e1; cursor: not-allowed;">Waitlist</button></td>
+                    </tr>
+                    <tr>
+                        <td>978-01323</td>
+                        <td><strong>Clean Code</strong></td>
+                        <td>Robert Martin</td>
+                        <td>CS</td>
+                        <td><span class="badge available">Available</span></td>
+                        <td><button class="btn btn-navy" style="padding: 5px 12px; font-size: 0.8rem;" onclick="alert('Requested!')">Borrow</button></td>
+                    </tr>
+                    <tr>
+                        <td>978-00735</td>
+                        <td><strong>Discrete Mathematics</strong></td>
+                        <td>Kenneth Rosen</td>
+                        <td>CS</td>
+                        <td><span class="badge available">Available</span></td>
+                        <td><button class="btn btn-navy" style="padding: 5px 12px; font-size: 0.8rem;" onclick="alert('Requested!')">Borrow</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function filterBooks() {
+            let input = document.getElementById('searchBar').value.toUpperCase();
+            let table = document.getElementById('catalogTable');
+            let tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                let title = tr[i].getElementsByTagName('td')[1].innerText.toUpperCase();
+                let author = tr[i].getElementsByTagName('td')[2].innerText.toUpperCase();
+                if (title.indexOf(input) > -1 || author.indexOf(input) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+            }
+        }
+    </script>
+</body>
+</html>

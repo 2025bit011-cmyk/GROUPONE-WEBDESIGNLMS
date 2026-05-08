@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group One | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">GROUP ONE | MUST LMS</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="dashboard.html">My Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px;">
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
+                    <h3 style="margin-top: 10px;">Student Portal</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">BIT Year 1 | Group One</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 15px;">
+                <p><strong>Account Status:</strong> <span style="color: var(--success)">Active</span></p>
+                <p><strong>Library ID:</strong> MUST-2026-G1</p>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h3>Currently Borrowed Books</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Due Date</th>
+                                <th>Fines</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Operating Systems Design</td>
+                                <td>May 15, 2026</td>
+                                <td>UGX 0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" style="border-left: 5px solid var(--must-gold);">
+                    <h3>Announcements</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Please return all borrowed books 48 hours before the end of the semester exams.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
