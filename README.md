@@ -15,4 +15,4 @@ Our LMS  automates library cataloging and student borrowing records.
 * **Byamugisga Lawrence:** Quality Assurance & Testing
 
 ## Accessing the Project
-The live site can be accessed at: [Insert your GitHub Pages Link Here]
+The live site can be accessed at: [https://2025bit011-cmyk.github.io/GROUPONE-WEBDESIGNLMS/]
